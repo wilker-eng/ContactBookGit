@@ -158,19 +158,21 @@ public class Main {
         int phone;
         phone = in.nextInt(); in.nextLine();
 
+        String contName;
+
         if (cBook.getNumberOfContacts() != 0) 
         {
             cBook.initializeIterator();
 
             while( cBook.hasNext() ) 
             {
-                Contact c = cBook.next();
+                Contact c = cBook.next(); 
+
                 String cphone = c.getPhone();
                 if ( phone == cphone )
-                System.out.println(c.getName() + "; " + c.getEmail() + "; " + c.getPhone());
+                    contName = c.getName;
             }
         }
-
-
+        System.out.println(cbook.getName(contName) + "; " + cBook.getEmail() + "; " + cBook.getPhone());
     }
 }
