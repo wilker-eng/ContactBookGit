@@ -15,6 +15,7 @@ public class Main {
     public static final String LIST_CONTACTS  = "LC";
     public static final String SAME_PHONE     = "EP"
     public static final String QUIT           = "Q";
+    public static final String GIVIN_NUMBER  = "GN";
 
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
@@ -55,9 +56,6 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
-                    break;
-                case SAME_PHONE:
-                    SamePhone(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -160,26 +158,19 @@ public class Main {
         int phone;
         phone = in.nextInt(); in.nextLine();
 
-        String contName;
-
         if (cBook.getNumberOfContacts() != 0) 
         {
             cBook.initializeIterator();
 
-            while( cBook.hasNext() )    
+            while( cBook.hasNext() ) 
             {
-                Contact c = cBook.next(); 
-
+                Contact c = cBook.next();
                 String cphone = c.getPhone();
                 if ( phone == cphone )
-                    contName = c.getName;
+                System.out.println(c.getName() + "; " + c.getEmail() + "; " + c.getPhone());
             }
-            System.out.println(cbook.getName(contName) + "; " + cBook.getEmail() + "; " + cBook.getPhone());
-
         }
-         if (cphone == NULL)
-            System.out.println( PHONE_NOTEXIST);
-         
+
 
     }
 }
