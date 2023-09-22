@@ -23,8 +23,10 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
+    public static final String PHONE_NOTEXIST = "Phone number does not exist."
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -172,7 +174,12 @@ public class Main {
                 if ( phone == cphone )
                     contName = c.getName;
             }
+            System.out.println(cbook.getName(contName) + "; " + cBook.getEmail() + "; " + cBook.getPhone());
+
         }
-        System.out.println(cbook.getName(contName) + "; " + cBook.getEmail() + "; " + cBook.getPhone());
+         if (cphone == NULL)
+            System.out.println( PHONE_NOTEXIST);
+         
+
     }
 }
