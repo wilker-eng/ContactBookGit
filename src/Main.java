@@ -166,7 +166,7 @@ public class Main {
         {
             cBook.initializeIterator();
 
-            while( cBook.hasNext() ) 
+            while( cBook.hasNext() )    
             {
                 Contact c = cBook.next(); 
 
