@@ -14,6 +14,7 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
+    public static final String GIVIN_NUMBER  = "GN";
 
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
@@ -52,6 +53,9 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case GIVIN_NUMBER:
+                    givingNumber(in,cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -146,5 +150,21 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+    private static void givingNumber(Scanner in, ContactBook cBook) {
+        int number = in.nextInt();
+        Contact result = null;
+        cBook.initializeIterator();
+        while (cBook.hasNext()) {
+            Contact c = cBook.next();
+            if (c.getPhone() == number) {
+                result = c;
+            }
+        }
+        if (result != null) {
+            System.out.println(result.getName() + "; " + result.getEmail() + "; " + result.getPhone());
+        } else {
+            System.out.println("Phone number does not exist.");
+        }
     }
 }
