@@ -151,6 +151,7 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
+<<<<<<< HEAD
 
     
     private static String SamePhone(Scanner in)
@@ -158,19 +159,28 @@ public class Main {
         int phone;
         phone = in.nextInt(); in.nextLine();
 
+        String contName;
+
         if (cBook.getNumberOfContacts() != 0) 
         {
             cBook.initializeIterator();
 
-            while( cBook.hasNext() ) 
+            while( cBook.hasNext() )    
             {
-                Contact c = cBook.next();
+                Contact c = cBook.next(); 
+
                 String cphone = c.getPhone();
                 if ( phone == cphone )
-                System.out.println(c.getName() + "; " + c.getEmail() + "; " + c.getPhone());
+                    contName = c.getName;
             }
-        }
+            System.out.println(cbook.getName(contName) + "; " + cBook.getEmail() + "; " + cBook.getPhone());
 
+        }
+         if (cphone == NULL)
+            System.out.println( PHONE_NOTEXIST);
+         
 
     }
+=======
+>>>>>>> 35a3d993e72d80f2f3754db5fe565bebf6a6a990
 }
